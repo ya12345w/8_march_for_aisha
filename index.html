@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С 8 марта, Айша!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff0000, #ffffff);
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 48px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .music-player {
+            margin: 20px 0;
+        }
+
+        .dance-images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .dance-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid #fff;
+            animation: dance 2s infinite ease-in-out;
+        }
+
+        @keyframes dance {
+            0% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(0) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(-5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .show-greeting-btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            background: #fff;
+            color: #ff0000;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .show-greeting-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .greeting-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+        }
+
+        .greeting-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            color: #ff0000;
+            box-shadow: 0 0 20px rgba(255,0,0,0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #ff0000;
+        }
+
+        .decor-rose {
+            position: absolute;
+            width: 100px;
+            animation: float 3s infinite;
+        }
+
+        .decor-tulip {
+            position: absolute;
+            width: 80px;
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>С 8 марта, Айша!</h1>
+
+        <div class="music-player">
+            <audio controls>
+                <source src="мама с 8 марта.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает аудио
+            </audio>
+        </div>
+
+        <div class="dance-images">
+            <img src="https://i.pinimg.com/736x/e9/47/ad/e947ad28dedbe10c4f445d7dcffe99fc.jpg" alt="Rose" class="dance-img">
+            <img src="img.jpeg" alt="8 march img" class="dance-img">
+            <img src="https://i.pinimg.com/736x/31/7c/91/317c917c9e4b8c96ec099f4d2733516e.jpg" alt="Tulip" class="dance-img">
+        </div>
+
+        <button class="show-greeting-btn" onclick="showGreeting()">Открыть поздравление</button>
+    </div>
+
+    <div class="greeting-modal" id="greetingModal">
+        <div class="greeting-content">
+            <span class="close-btn" onclick="hideGreeting()">×</span>
+            <h2>Дорогая мама Айша!</h2>
+            <p>С 8 марта тебя поздравляет твой Яхйа! Желаю тебе море счастья, любви и радости! Ты самая лучшая мама в мире! Пусть каждый день приносит тебе улыбки, как эти танцующие цветы!</p>
+        </div>
+    </div>
+
+    <!-- Декорации -->
+    <img src="https://i.pinimg.com/originals/56/c4/42/56c4426adde2d4fd5fe9f12eb179702f.jpg" class="decor-rose" style="top: 10%; left: 10%; width: 100px; height; 100px;">
+    <img src="https://i.pinimg.com/originals/21/97/71/2197715aa9f661859d3a5da2482a5369.jpg" class="decor-tulip" style="top: 5%; right: 10%; width: 100px; height; 100px;">
+    <img src="https://stihi.ru/pics/2018/11/30/8362.jpg" class="decor-rose" style="bottom: 10%; left: 10%; width: 100px; height; 100px;">
+    <img src="https://i.pinimg.com/originals/4d/8e/5f/4d8e5fc1a87d4399f781d203ea067e9f.jpg" class="decor-tulip" style="bottom: 15%; right: 10%; width: 100px; height; 100px;">
+
+    <script>
+        function showGreeting() {
+            document.getElementById('greetingModal').style.display = 'block';
+        }
+
+        function hideGreeting() {
+            document.getElementById('greetingModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
